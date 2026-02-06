@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NetStalker // Stats</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Branding -->
+  <div class="ui-box brand-box">NETSTALKER</div>
+
+  <!-- Navigation -->
+  <div class="nav-container">
+    <a href="index.html" class="ui-box nav-btn">MAP</a>
+    <a href="stats.html" class="ui-box nav-btn active">STATS</a>
+  </div>
+
+  <!-- Stats Content -->
+  <div class="stats-container">
+    <div class="stats-content-wrapper">
+      
+      <!-- Top Row: Summary Cards -->
+      <div class="stats-row">
+
+        <div class="ui-box stat-card border-purple">
+          <div class="label-tactical">WI-FI NETWORKS</div>
+          <div class="stat-value" id="total-wifi">0</div>
+        </div>
+
+      </div>
+
+      <!-- Middle Row: Charts -->
+      <div class="stats-row">
+        
+        <!-- Signal Strength Distribution -->
+        <div class="ui-box chart-container">
+          <div class="label-tactical purple-accent">SIGNAL STRENGTH</div>
+          <div class="chart-wrapper">
+            <canvas id="chart"></canvas>
+          </div>
+        </div>
+
+        <!-- Security Distribution -->
+        <div class="ui-box chart-container">
+          <div class="label-tactical green-accent">SECURITY AUDIT</div>
+          <div class="chart-wrapper">
+            <canvas id="protectionChart"></canvas>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Row: Channel Congestion -->
+      <div class="ui-box full-width-chart">
+        <div class="label-tactical blue-accent">CHANNEL CONGESTION (2.4GHz)</div>
+        <div class="chart-wrapper">
+          <canvas id="channelChart"></canvas>
+        </div>
+      </div>
+
+      <!-- Vendor Distribution -->
+      <div class="ui-box full-width-chart" style="height: 420px;">
+        <div class="label-tactical purple-accent">TOP DEVICE MANUFACTURERS</div>
+        <div class="chart-wrapper">
+          <canvas id="vendorChart"></canvas>
+        </div>
+      </div>
+
+      <!-- Top SSIDs Table -->
+      <div class="ui-box ssid-table-box">
+        <div class="label-tactical purple-accent">MOST COMMON SSIDs</div>
+        <table class="ssid-table" id="ssid-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>SSID</th>
+              <th>Vendor</th>
+              <th style="text-align:right">Count</th>
+            </tr>
+          </thead>
+          <tbody id="ssid-table-body"></tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="stats.js"></script>
+</body>
+</html>

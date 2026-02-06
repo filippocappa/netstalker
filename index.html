@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>NetStalker // Map</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet" />
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Branding -->
+  <div class="ui-box brand-box">NETSTALKER</div>
+
+  <!-- Navigation -->
+  <div class="nav-container">
+    <a href="index.html" class="ui-box nav-btn active">MAP</a>
+    <a href="stats.html" class="ui-box nav-btn">STATS</a>
+  </div>
+
+  <!-- Search Bar -->
+  <div class="search-container">
+    <input type="text" id="global-search" placeholder="🔍 Search SSID, MAC, Vendor...">
+  </div>
+
+  <!-- Map Container -->
+  <div id="map"></div>
+
+  <!-- View Mode Switcher -->
+  <div class="ui-box heatmap-switcher">
+    <div class="label-tactical">VIEW MODE</div>
+    <div class="heatmap-buttons">
+      <button class="heatmap-btn active" data-mode="density">📊 Density</button>
+      <button class="heatmap-btn" data-mode="security">🔒 Security</button>
+      <button class="heatmap-btn" data-mode="signal">📡 Signal</button>
+      <button class="heatmap-btn" data-mode="none">⭕ None</button>
+    </div>
+  </div>
+
+  <!-- Toggles Row -->
+  <div class="ui-box toggles-row">
+    <button id="toggle-route" class="toggle-btn active">🗺️ Route: ON</button>
+    <button id="toggle-open" class="toggle-btn open-btn">🔓 Open Networks</button>
+    <button id="toggle-theme" class="toggle-btn">☀️ Light</button>
+  </div>
+
+  <!-- Vendor Filter Chips -->
+  <div class="ui-box vendor-box">
+    <div class="label-tactical" style="font-size: 9px;">FILTER BY VENDOR</div>
+    <div id="vendor-chips" class="vendor-chips"></div>
+  </div>
+
+  <!-- Stats Panel -->
+  <div class="ui-box stats-panel">
+    <div class="label-tactical">VISIBLE DEVICES</div>
+    <div class="stat-value" style="font-size: 28px; margin-top: 8px;">
+      <span id="stats-val">0</span>
+    </div>
+  </div>
+
+  <!-- Filter Menu -->
+  <div class="ui-box filter-menu">
+    <h3 class="panel-title">FILTERS</h3>
+
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+
+      <!-- Session Timeline -->
+      <div class="custom-select-wrapper">
+        <span class="label-tactical" style="font-size: 10px;">📅 SESSION</span>
+        <div class="custom-select" id="session-select">
+          <div class="custom-select-trigger" id="session-trigger">
+            <span id="session-label">All Sessions</span>
+            <span class="custom-select-arrow">&#9662;</span>
+          </div>
+          <div class="custom-select-options" id="session-options">
+            <div class="custom-select-option selected" data-value="all">All Sessions</div>
+          </div>
+        </div>
+        <input type="hidden" id="session-filter" value="all">
+      </div>
+
+      <!-- RSSI Slider -->
+      <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+        <span class="label-tactical" style="font-size: 10px;">MIN SIGNAL</span>
+        <span id="rssi-disp" class="rssi-highlight">-100 dBm</span>
+      </div>
+      <input
+        type="range"
+        id="rssi-slider"
+        min="-100"
+        max="-30"
+        value="-100"
+        step="1"
+        style="width:100%; cursor: pointer;">
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
