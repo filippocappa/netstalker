@@ -73,6 +73,13 @@ Visit `http://localhost:8000`
 | Signal | Purple (weak) to cyan/white (strong) colored points |
 | None | Simple purple dots |
 
-## License
 
+## Example Picture
+![Cluster view](Cluster.png)
+![Stats view](Stats.png)
+![Heatmap](Heatmap.png)
+![Security](Security.png)
+![Zoomed in](Zoomed_In.png)
+
+## License
 MIT
