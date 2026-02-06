@@ -74,12 +74,27 @@ Visit `http://localhost:8000`
 | None | Simple purple dots |
 
 
-## Example Picture
-![Cluster view](Cluster.png)
-![Stats view](Stats.png)
-![Heatmap](Heatmap.png)
-![Security](Security.png)
-![Zoomed in](Zoomed_In.png)
+## Example Pictures
+
+<p align="center">
+  <img src="images/Cluster.png" width="650">
+</p>
+
+<p align="center">
+  <img src="images/Stats.png" width="650">
+</p>
+
+<p align="center">
+  <img src="images/Heatmap.png" width="650">
+</p>
+
+<p align="center">
+  <img src="images/Security.png" width="650">
+</p>
+
+<p align="center">
+  <img src="images/Zoomed_In.png" width="650">
+</p>
 
 ## License
 MIT
